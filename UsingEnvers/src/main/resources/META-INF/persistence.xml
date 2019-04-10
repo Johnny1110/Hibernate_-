@@ -1,0 +1,31 @@
+<!--persistence.xml 路徑一定要在 classpath 下的 META-INF 才能被 Hibernate 找到-->
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <!--設定持久化單元名稱，供程式取用-->
+    <persistence-unit name="UsingEnvers">
+        <description>
+            UsingEnvers 是一個提供練習 Envers 的持久化單元。
+        </description>
+
+        <!--設置實體類-->
+        <class>entity.Event</class>
+
+        <!--連線設定-->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1;MVCC=TRUE" />
+            <property name="javax.persistence.jdbc.user" value="sa" />
+            <property name="javax.persistence.jdbc.password" value="" />
+
+            <!--Print Hibernate 生成的 SQL-->
+            <property name="hibernate.show_sql" value="true" />
+
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
+        </properties>
+    </persistence-unit>
+</persistence>

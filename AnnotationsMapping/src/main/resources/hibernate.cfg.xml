@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- 資料庫連接設定 (使用 in memory 資料庫) -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1;MVCC=TRUE</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"/>
+
+        <!-- C3P0 連接池設定 -->
+        <!-- 最小的Connection數目 -->
+        <property name="c3p0.min_size">5</property>
+        <!-- 最大的Connection數目 -->
+        <property name="c3p0.max_size">20</property>
+        <!-- 允許的idle時間 -->
+        <property name="c3p0.timeout">300</property>
+        <!-- 最大的Statement數目 -->
+        <property name="c3p0.max_statements">50</property>
+        <!-- idle的測試週期 -->
+        <property name="c3p0.idle_test_period">3000</property>
+
+        <!-- SQL dialect 設定 -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- 關閉二級緩存  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+
+        <!-- Print 出 Hibernate 執行的 SQL -->
+        <property name="show_sql">true</property>
+
+        <!-- hbm2ddl.auto 設定 -->
+        <!--create：-->
+        <!--每次加載休眠時都會刪除上一次的生成的表，然後根據你的模型類再重新來生成新表，哪怕兩次沒有任何改變也要這樣執行，這就是導致數據庫表數據丟失的一個重要原因。-->
+        <!--create-drop：-->
+        <!--每次加載休眠時根據模型類生成表，但是 SessionFactory 一但關閉，表就自動刪除。-->
+        <!--update：-->
+        <!--最常用的屬性，第一次加載 hibernate 時根據模型類會自動建立起表的結構（前提是先建立好數據庫），以後加載hibernate時根據模型類自動更新表結構，即使表結構改變了但表中的行仍然存在不會刪除以前的行。要注意的是當部署到服務器後，表結構是不會被馬上建立起來的，是要等應用第一次運行起來後才會。-->
+        <!--validate：-->
+        <!--每次加載休眠時，驗證創建數據庫表結構，只會和數據庫中的表進行比較，不會創建新表，但是會插入新值。-->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- 設定實體類映射文件 -->
+        <mapping class="entity.Event"/>
+
+    </session-factory>
+
+</hibernate-configuration>
