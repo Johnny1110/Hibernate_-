@@ -40,7 +40,7 @@ public class Event {
         this.date = date;
     }
 
-    @Column(name = "TITLE") // 可有可無，因為反射機制會自動取得 get後面的字串轉大寫作欄位名稱使用
+    @Column(name = "TITLE", nullable = false) // 可有可無，因為反射機制會自動取得 get後面的字串寫作欄位名稱使用，nullable = false 不可為空值
     public String getTitle() {
         return title;
     }
