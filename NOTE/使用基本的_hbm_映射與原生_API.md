@@ -12,7 +12,7 @@
 
 ### hibernate.cfg.xml
 
-* [看範例程式點這裡](../BasicHibernate\src\main\resources\hibernate.cfg.xml)
+* [看範例程式點這裡](../BasicHibernate/src/main/resources/hibernate.cfg.xml)
 
 * 在 Resorces 資料夾中建立一個 xml 檔，全名叫做 hibernate.cfg.xml。
 
@@ -47,7 +47,7 @@
 
 ### Event.java
 
-* [看範例程式點這裡](../BasicHibernate\src\main\java\entity/Event.java)
+* [看範例程式點這裡](../BasicHibernate/src/main/java/entity/Event.java)
 
 * Event.java 事實上就是一個簡單的 Java 對象 ( POJO )，但是待會經過配置之後，就會進化成實體 ( Entity )，進而可以被 Hibernate 管理。
 
@@ -59,7 +59,7 @@
 
 ## 實體映射 hbm
 
-* [看範例程式點這裡](../BasicHibernate\src\main\resources\Event.hbm.xml)
+* [看範例程式點這裡](../BasicHibernate/src/main/resources/Event.hbm.xml)
 
 * 因為 Hibernate 並不知道我要將 Event.java 作為實體使用。所以我需要配置一個 Event.hbm.xml 來跟 Hibernate 交代清楚 Event.java 這個實體對應了資料庫的哪一個 Table 以及 具體欄位。
 
@@ -86,7 +86,7 @@
 
 ### HibernateUtil
 
-* [看範例程式點這裡](../BasicHibernate\src\main\java\utility\HibernateUtil.java)
+* [看範例程式點這裡](../BasicHibernate/src/main/java/utility/HibernateUtil.java)
 
 * 在之前的 hibernate.cfg.xml 中我們已經配置好 SessionFactory 了，那他究竟是什麼呢 ?其實可以把他當作是 JDBC 中 Connection 的製造工廠，只不過他並不是製造 Connection，而是製造 Session。Session 是對 JDBC Connection 更高級的封裝，當只有在提交交易時才會取得 Connection 使用。
 
@@ -97,7 +97,7 @@
 
 ### Test
 
-* [看範例程式點這裡](../BasicHibernate\src\test\java\BasicTest.java)
+* [看範例程式點這裡](../BasicHibernate/src/test/java/BasicTest.java)
 
 * 測試中使用 HibernateUtil 取得 SessionFactory，再通過 openSession( ) 方法取得 Session 物件。
 
