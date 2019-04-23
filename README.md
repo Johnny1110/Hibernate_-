@@ -1,7 +1,7 @@
 # Hibernate_學習筆記
 
 
-### 這裡是本人針對 Hibernate 作為 JPA 實作的學習筆記。
+### 這裡是我針對 Hibernate 作為 JPA 實作的學習筆記，基於 JDK 1.8 實作。
 
 
 
@@ -36,3 +36,9 @@
 ### Hibernate 原生 API
     
 * [使用基本的 hbm 映射與原生 API](./NOTE/使用基本的_hbm_映射與原生_API.md)
+
+* [使用 JPA Annotations 做實體映射](./NOTE/使用_JPA_Annotations_做實體映射.md)
+
+* [使用 Session](./NOTE/使用_Session.md)
+
+* [Persistence context 與 實體生命週期](./NOTE/Persistence_context_與_實體生命週期.md)

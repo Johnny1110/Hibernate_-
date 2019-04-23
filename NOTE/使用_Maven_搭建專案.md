@@ -13,11 +13,11 @@
 
 ### Hibernate Core
 
-* 這是 Hibernate 的核心模組，包含了 Hibernate 基本的依賴。
+* 這是 Hibernate 的核心模組，包含了 Hibernate 基本的依賴。這裡我使用 5.2 穩定版本。
 
 ### Connection Pool
 
-* 連接池的配置就比較自由了，Hibernate 並沒有特別指名要哪一個連接池，所以我就用學長推薦 C3P0。
+* 連接池的配置就比較自由了，Hibernate 並沒有特別指名要哪一個連接池，所以我就用學長推薦 C3P0 連接池。
 
 ### Second-Level Cache
 
@@ -25,7 +25,7 @@
 
 ### Database Driver
 
-* Database 本來 Hibernate 就來者不拒，為了方便做 in-memory 測試就使用 H2 資料庫。
+* Database 本來 Hibernate 就來者不拒，為了方便做測試就使用 H2 in-memory 資料庫。
 
 ### Logger
 

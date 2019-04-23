@@ -3,7 +3,9 @@ import org.hibernate.Session;
 import org.junit.Test;
 import utility.HibernateUtil;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class BasicTest {
@@ -28,5 +30,32 @@ public class BasicTest {
         session1.getTransaction().commit();
         session1.close();
         HibernateUtil.closeSessionFactory();
+    }
+
+    @Test
+    public void killing(){
+        // 填入試驗值。
+        List<Integer> group = new ArrayList<Integer>();
+        for(int i = 0 ; i < 1000 ; i++){
+            group.add( i + 1);
+        }
+        group = filterValue(group);
+        group.forEach(g ->{
+            System.out.print(g + " ");
+        });
+    }
+
+    public static List<Integer> filterValue(List<Integer> input){
+        int listSize = input.size();
+        List<Integer> newGroup = new ArrayList<Integer>();
+        for(int i = 0 ; i < listSize ; i ++){
+            if((i + 1) % 2 == 0){
+                newGroup.add(input.get(i));
+            }
+        }
+        if(newGroup.size() > 1){
+            newGroup = filterValue(newGroup);
+        }
+        return newGroup;
     }
 }

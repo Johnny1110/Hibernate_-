@@ -45,13 +45,13 @@
 
 <br>
 
-### Event.java
+### POJO -> Entity
 
 * [看範例程式點這裡](../BasicHibernate/src/main/java/entity/Event.java)
 
-* Event.java 事實上就是一個簡單的 Java 對象 ( POJO )，但是待會經過配置之後，就會進化成實體 ( Entity )，進而可以被 Hibernate 管理。
+* 建立一個類別叫做 Event.java 事實上就是一個簡單的 Java 對象 ( POJO )，但是待會經過配置之後，就會進化成實體 ( Entity )，進而可以被 Hibernate 管理。
 
-* 特別要注意，實體中一定要有一個建構函式，提供 Hibernate 一個實例化實體的方法。
+* 特別要注意，實體中一定要有一預設個建構函式，提供 Hibernate 一個實例化實體的方法。
 
 
 <br>

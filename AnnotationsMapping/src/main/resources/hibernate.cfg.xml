@@ -18,7 +18,7 @@
         <property name="c3p0.min_size">5</property>
         <!-- 最大的Connection數目 -->
         <property name="c3p0.max_size">20</property>
-        <!-- 允許的idle時間 -->
+        <!-- 允許的idle (閒置) 時間 -->
         <property name="c3p0.timeout">300</property>
         <!-- 最大的Statement數目 -->
         <property name="c3p0.max_statements">50</property>

@@ -26,6 +26,7 @@ public class AnnoationsTest {
         }
         session.getTransaction().commit();
         session.close();
+
         HibernateUtil.closeSessionFactory();
     }
 
