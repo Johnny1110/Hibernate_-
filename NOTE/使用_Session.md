@@ -60,7 +60,7 @@ Session 並不等於 Connection。事實上 Session 實例在真正提交對資�
 
 ## Session 基本操作
 
-這裡的 Session 取得都是通過 HibernateUtil，其靜態載入並封裝了 SessionFactory。具體實作範例[點這裡](../BasicHibernate/src/main/java/utility/HibernateUtil.java)
+這裡的 Session 取得都是通過自己產出的一個 HibernateUtil 物件，其靜態載入並封裝了 SessionFactory。具體實作範例[點這裡](../BasicHibernate/src/main/java/utility/HibernateUtil.java)
 
 <br>
 
