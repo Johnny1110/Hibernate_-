@@ -1,4 +1,8 @@
-
+### IDEA ###
 \.idea/
+
+\.iml/
+
+AnnotationsMapping/
 
 *.iml
